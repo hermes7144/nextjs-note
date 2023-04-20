@@ -7,11 +7,7 @@ export const metadata: Metadata = {
   description: '멋진 제품을 확인해 보세요',
 };
 
-export default function ProductsLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function ProductsLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <nav className={styles.nav}>
@@ -22,3 +18,4 @@ export default function ProductsLayout({
     </>
   );
 }
+

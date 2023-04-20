@@ -2,6 +2,11 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import './globals.css';
 import styles from './layout.module.css';
+import { Open_Sans } from '@next/font/google';
+import { Nanum_Gothic } from '@next/font/google';
+
+const sans = Open_Sans({ subsets: ['latin'] });
+const gothic = Nanum_Gothic({ weight: '700', subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: '멋진 제품 사이트',
@@ -11,13 +16,9 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang='en'>
+    <html lang='en' className={gothic.className}>
       {/*
         <head /> will contain the components returned by the nearest parent
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
@@ -37,3 +38,4 @@ export default function RootLayout({
     </html>
   );
 }
+
